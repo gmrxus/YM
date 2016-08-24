@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">YM</string>
+    <string name="set_update_init">修改信息</string>
+    <string name="set_last_time">上次时间 :</string>
+    <string name="set_duration">时长 :</string>
+    <string name="set_cycle">周期 :</string>
+
 </resources>

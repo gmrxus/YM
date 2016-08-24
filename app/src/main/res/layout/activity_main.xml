@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/main_bottom_bg"
+        android:background="@drawable/bg_main_bottom"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:background="@drawable/main_button_bg">
+                android:background="@drawable/bg_main_button">
 
                 <TextView
                     android:id="@+id/tv_shouye"
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:background="@drawable/main_button_bg">
+                android:background="@drawable/bg_main_button">
 
                 <TextView
                     android:id="@+id/tv_xingzuo"
@@ -78,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:background="@drawable/main_button_bg">
+                android:background="@drawable/bg_main_button">
 
             <TextView
                 android:id="@+id/tv_jiankang"
@@ -102,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:background="@drawable/main_button_bg">
+                android:background="@drawable/bg_main_button">
 
                 <TextView
                     android:id="@+id/tv_wode"
