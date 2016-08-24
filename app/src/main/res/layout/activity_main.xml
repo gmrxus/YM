@@ -13,10 +13,10 @@
         android:layout_weight="10"></FrameLayout>
 
     <LinearLayout
-        android:background="@drawable/main_bottom_bg"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@drawable/main_bottom_bg"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -26,6 +26,22 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@drawable/main_button_bg">
+
+                <TextView
+                    android:id="@+id/tv_shouye"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="首页"
+                    android:textSize="@dimen/main_button_tv_size_initial" />
+            </RelativeLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -33,20 +49,71 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@drawable/main_button_bg">
+
+                <TextView
+                    android:id="@+id/tv_xingzuo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="星座"
+                    android:textSize="@dimen/main_button_tv_size_initial" />
+            </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ll_main_jiankang"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@drawable/main_button_bg">
+
+            <TextView
+                android:id="@+id/tv_jiankang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="健康"
+                android:textSize="@dimen/main_button_tv_size_initial" />
+            </RelativeLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ll_main_wode"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@drawable/main_button_bg">
+
+                <TextView
+                    android:id="@+id/tv_wode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="我的"
+                    android:textSize="@dimen/main_button_tv_size_initial" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

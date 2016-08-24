@@ -9,6 +9,7 @@ import android.content.Context;
  * Created by mrxus on 16/8/23.
  */
 public class YmApplication extends Application {
+    private static YmApplication ymApp;
     /**
      * 全局context
      */
@@ -17,10 +18,12 @@ public class YmApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initContext();
+        ymApp = this;
+
     }
 
-    private void initContext() {
-        this.context = getApplicationContext();
+
+    public static Context getContext() {
+        return ymApp;
     }
 }
