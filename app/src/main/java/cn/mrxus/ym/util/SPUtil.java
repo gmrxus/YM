@@ -15,6 +15,7 @@ public class SPUtil {
     public interface SPkeys{
 
         String IS_INIT_SET = "isInitSet";
+        String VALUE_INIT_SET = "valueInitSet";
     }
 
 

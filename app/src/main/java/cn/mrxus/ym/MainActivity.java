@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.mrxus.ym.common.BaseActivity;
+import cn.mrxus.ym.util.SPUtil;
 import cn.mrxus.ym.view.fragment.JiankangFragment;
 import cn.mrxus.ym.view.fragment.MainFragment;
 import cn.mrxus.ym.view.fragment.WodeFragment;
@@ -78,6 +80,8 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.ll_main_wode:
                 showFragment(4);
+                Toast.makeText(this, "用户初始设置的数据:" + SPUtil.get(this, SPUtil.SPkeys.VALUE_INIT_SET, ""), Toast.LENGTH_SHORT).show();
+
                 break;
 
         }

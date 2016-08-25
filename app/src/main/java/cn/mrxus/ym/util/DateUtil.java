@@ -76,4 +76,19 @@ public class DateUtil {
         }
         return cg;
     }
+
+    /**
+     * 根据传入的毫秒数 获取时间
+     * <p/>
+     * 格式:yyyy年MM月dd日
+     *
+     * @param time
+     * @return
+     */
+    public static String getTime(long time) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
+
+        return format.format(new java.util.Date(time));
+
+    }
 }
