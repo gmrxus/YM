@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_main"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -48,17 +49,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/set_last_time" />
+                    android:text="@string/set_last_time"
+                    android:textSize="@dimen/main_tv_update_init_set_edittext" />
 
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="match_parent" />
 
-                <EditText
-                    android:id="@+id/et_last_time"
+                <TextView
+                    android:id="@+id/tv_last_time"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@null" />
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="选择上次时间"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/main_tv_update_init_set_edittext" />
 
             </LinearLayout>
 
@@ -82,17 +86,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/set_duration" />
+                    android:gravity="center_vertical|right"
+                    android:text="@string/set_duration"
+                    android:textSize="@dimen/main_tv_update_init_set_edittext" />
 
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="match_parent" />
 
-                <EditText
-                    android:id="@+id/et_duration"
+                <TextView
+                    android:id="@+id/tv_duration"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@null" />
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/main_tv_update_init_set_edittext" />
 
             </LinearLayout>
 
@@ -116,17 +123,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/set_cycle" />
+                    android:text="@string/set_cycle"
+                    android:textSize="@dimen/main_tv_update_init_set_edittext" />
 
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="match_parent" />
-
-                <EditText
-                    android:id="@+id/et_cycle"
+                <TextView
+                    android:id="@+id/tv_cycle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@null" />
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/main_tv_update_init_set_edittext" />
 
             </LinearLayout>
 

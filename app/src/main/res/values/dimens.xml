@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="main_button_tv_size_initial">15sp</dimen>
     <dimen name="main_tv_update_init_set">25sp</dimen>
+    <dimen name="main_tv_update_init_set_edittext">20sp</dimen>
 </resources>
