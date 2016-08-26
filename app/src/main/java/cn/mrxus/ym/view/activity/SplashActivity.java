@@ -1,6 +1,7 @@
 package cn.mrxus.ym.view.activity;
 
 import android.os.Handler;
+import android.text.TextUtils;
 
 import cn.mrxus.ym.MainActivity;
 import cn.mrxus.ym.R;
@@ -27,7 +28,7 @@ public class SplashActivity extends BaseActivity {
             public void run() {
                 if (isInitSet()) {
                     go2View(MainActivity.class);
-                }else {
+                } else {
                     go2View(InitSetActivity.class);
                 }
             }
@@ -35,7 +36,10 @@ public class SplashActivity extends BaseActivity {
     }
 
     private boolean isInitSet() {
-       return (boolean) SPUtil.get(YmApplication.getContext(),SPUtil.SPkeys.IS_INIT_SET,false);
+        if (TextUtils.isEmpty((String) SPUtil.get(YmApplication.getContext(), SPUtil.SPkeys.VALUE_INIT_SET, ""))) {
+            return false;
+        }
+        return true;
     }
 
 

@@ -77,6 +77,7 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.ll_main_jiankang:
                 showFragment(3);
+                SPUtil.put(this,SPUtil.SPkeys.VALUE_INIT_SET,"");
                 break;
             case R.id.ll_main_wode:
                 showFragment(4);

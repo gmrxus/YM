@@ -4,5 +4,7 @@
     <string name="set_last_time">上次时间</string>
     <string name="set_duration">时长</string>
     <string name="set_cycle">周期</string>
+    <string name="xingzuo_yunshi">运势</string>
+    <string name="xingzuo_peidui">配对</string>
 
 </resources>

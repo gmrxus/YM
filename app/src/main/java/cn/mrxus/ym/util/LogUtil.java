@@ -9,7 +9,7 @@ import com.orhanobut.logger.Logger;
  */
 public class LogUtil {
     private static boolean isLog = true;//是否需要打印log,可以换成public 在自定义application的onCreate里面设置
-    private static String TAG = "";//自定义tag
+    private static String TAG = "pengqian";//自定义tag
 
     static {
         Logger

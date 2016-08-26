@@ -14,7 +14,6 @@ public class SPUtil {
     private static final String SP_FILE_NAME = "ymSPConfig";
     public interface SPkeys{
 
-        String IS_INIT_SET = "isInitSet";
         String VALUE_INIT_SET = "valueInitSet";
     }
 
