@@ -1,6 +1,5 @@
 package cn.mrxus.ym.view.fragment;
 
-import android.support.v4.app.Fragment;
 import android.view.View;
 
 import cn.mrxus.ym.R;

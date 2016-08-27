@@ -37,8 +37,8 @@ public class XingzuoFragment extends BaseFragment implements IXingzuoView {
     @BindView(R.id.xingzuo_content)
     FrameLayout xingzuoContent;
 
-    private Fragment yunshiFragment;
-    private Fragment peiduiFragment;
+    private YunshiFragment yunshiFragment;
+    private PeiduiFragment peiduiFragment;
 
     private XingzuoPresenter presenter;
 

@@ -147,8 +147,8 @@ public class MainActivity extends BaseActivity {
                 break;
 
         }
-        setAnimation(viewList, lastShowFragmentNumber, 1.2f, 1f, 100);
-        setAnimation(viewList, thisShowFragmentNumber, 1f, 1.2f, 200);
+        setAnimation(viewList, lastShowFragmentNumber, 1.4f, 1f, 100);
+        setAnimation(viewList, thisShowFragmentNumber, 1f, 1.4f, 200);
 
     }
 
