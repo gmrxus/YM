@@ -22,6 +22,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_baiyang"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -58,6 +59,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_jinniu"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -93,6 +95,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_shuangzi"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -137,6 +140,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_juxie"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -172,6 +176,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_shizi"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -207,6 +212,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/ll_yunshi_chunv"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -249,6 +255,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_tianping"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -284,6 +291,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_tianxie"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -319,6 +327,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_sheshou"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -361,6 +370,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_mojie"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -396,6 +406,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_shuiping"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
@@ -431,6 +442,7 @@
                 android:paddingBottom="10dp">
 
                 <ImageView
+                    android:id="@+id/iv_yunshi_shaungyu"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
