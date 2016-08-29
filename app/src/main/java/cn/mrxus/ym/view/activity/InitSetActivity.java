@@ -99,7 +99,7 @@ public class InitSetActivity extends BaseActivity implements IInitSetView {
                 break;
             case R.id.bt_ok://确定
                 presenter.setData(user);
-                go2View(MainActivity.class);
+                go2Activity(MainActivity.class);
                 presenter.finishView();
 
                 break;

@@ -11,6 +11,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.mrxus.ym.R;
 import cn.mrxus.ym.common.BaseFragment;
+import cn.mrxus.ym.common.YmApplication;
+import cn.mrxus.ym.view.activity.YunshiActivity;
 
 /**
  * Created by mrxus on 16/8/26.
@@ -42,6 +44,8 @@ public class YunshiFragment extends BaseFragment {
     @BindView(R.id.iv_yunshi_shaungyu)
     ImageView shuangyu;
 
+    private String xingzuo;
+
     @Override
     protected void init(View rootView) {
 
@@ -58,29 +62,43 @@ public class YunshiFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_yunshi_baiyang:
+                xingzuo="baiyang";
                 break;
             case R.id.iv_yunshi_jinniu:
+                xingzuo="jinniu";
                 break;
             case R.id.iv_yunshi_shuangzi:
+                xingzuo="shuangzi";
                 break;
             case R.id.iv_yunshi_juxie:
+                xingzuo="juxie";
                 break;
             case R.id.iv_yunshi_shizi:
+                xingzuo="shizi";
                 break;
             case R.id.ll_yunshi_chunv:
+                xingzuo="chunv";
                 break;
             case R.id.iv_yunshi_tianping:
+                xingzuo="tianping";
                 break;
             case R.id.iv_yunshi_tianxie:
+                xingzuo="tianxie";
                 break;
             case R.id.iv_yunshi_sheshou:
+                xingzuo="sheshou";
                 break;
             case R.id.iv_yunshi_mojie:
+                xingzuo="mojie";
                 break;
             case R.id.iv_yunshi_shuiping:
+                xingzuo="shuiping";
                 break;
             case R.id.iv_yunshi_shaungyu:
+                xingzuo="shuangyu";
                 break;
         }
+        go2ActivitySend(YunshiActivity.class, YmApplication.xingzuoKey,xingzuo);
+
     }
 }

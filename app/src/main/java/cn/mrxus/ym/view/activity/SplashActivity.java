@@ -27,9 +27,9 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
                 if (isInitSet()) {
-                    go2View(MainActivity.class);
+                    go2Activity(MainActivity.class);
                 } else {
-                    go2View(InitSetActivity.class);
+                    go2Activity(InitSetActivity.class);
                 }
             }
         }, 2000);

@@ -8,45 +8,51 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_xingzuo_head"
-        android:gravity="center">
+        android:layout_weight="1.5">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingLeft="70dp"
-            android:paddingRight="70dp"
-            android:paddingTop="10dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_xingzuo_head"
+            android:gravity="center">
 
-            <Button
-                android:id="@+id/bt_yunshi"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:background="@drawable/bg_xingzuo_head_left_pick"
-                android:text="@string/xingzuo_yunshi" />
+                android:paddingBottom="10dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="10dp">
 
-            <Button
-                android:id="@+id/bt_peidui"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:background="@drawable/bg_xingzuo_head_right_unpick"
-                android:text="@string/xingzuo_peidui" />
+                <Button
+                    android:id="@+id/bt_yunshi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_xingzuo_head_left_pick"
+                    android:text="@string/xingzuo_yunshi"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/bt_peidui"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_xingzuo_head_right_unpick"
+                    android:text="@string/xingzuo_peidui"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
         </LinearLayout>
-
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9">
+        android:layout_weight="8.5">
 
         <FrameLayout
             android:id="@+id/xingzuo_content"

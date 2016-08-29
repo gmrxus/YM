@@ -41,7 +41,7 @@ public abstract class BaseActivity extends FragmentActivity {
      *
      * @param activityClass
      */
-    public void go2View(Class<? extends Activity> activityClass) {
+    public void go2Activity(Class<? extends Activity> activityClass) {
         startActivity(new Intent(this, activityClass));
     }
 }

@@ -5,4 +5,6 @@
     <dimen name="main_button_tv_size_initial">15sp</dimen>
     <dimen name="main_tv_update_init_set">25sp</dimen>
     <dimen name="main_tv_update_init_set_edittext">20sp</dimen>
+    <dimen name="yunshi_title_default">18sp</dimen>
+    <dimen name="yunshi_title_selected">24sp</dimen>
 </resources>

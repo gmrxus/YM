@@ -12,12 +12,12 @@ import cn.mrxus.ym.MVP.view.IInitSetView;
 /**
  * Created by mrxus on 16/8/26.
  */
-public class InitSetPresenter {
+public class InitSetPresenter implements BasePresenter {
     private IInitSetView view;
     private IInitSetAct act;
 
     public InitSetPresenter(IInitSetView view) {
-        this.view = view;
+        attach(view);
         act = new InitSetAct();
     }
 
@@ -43,9 +43,19 @@ public class InitSetPresenter {
 
     public void onResume() {
         User user = act.restoreSet();
-        if (user==null) {
+        if (user == null) {
             return;
         }
         view.restoreSet(user.getLastTime(), user.getDuration(), user.getCycle());
+    }
+
+    @Override
+    public void attach(BaseView view) {
+        this.view = (IInitSetView) view;
+    }
+
+    @Override
+    public void dettach() {
+        view = null;
     }
 }

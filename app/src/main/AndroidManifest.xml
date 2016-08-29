@@ -26,6 +26,9 @@
         <activity
             android:name=".view.activity.InitSetActivity"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".view.activity.YunshiActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

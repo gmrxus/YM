@@ -9,6 +9,7 @@ import android.content.Context;
  * Created by mrxus on 16/8/23.
  */
 public class YmApplication extends Application {
+    public static String xingzuoKey="xingzuo";
     private static YmApplication ymApp;
     /**
      * 全局context

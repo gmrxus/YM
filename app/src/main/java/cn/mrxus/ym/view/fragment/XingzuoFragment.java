@@ -92,12 +92,6 @@ public class XingzuoFragment extends BaseFragment implements IXingzuoView {
         }
     }
 
-    /**
-     * 设置控件的颜色
-     *
-     * @param view
-     * @param colorId
-     */
     @Override
     public void setView(View view, @Nullable @ColorRes int colorId, @DrawableRes int drawableId) {
         if (view instanceof Button) {
