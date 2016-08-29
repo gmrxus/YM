@@ -87,7 +87,7 @@ public class HttpUtil {
         }
 
         public static class Builder {
-            private Builder() {
+            public Builder() {
             }
 
             private HashMap<String, String> map = new HashMap<>();

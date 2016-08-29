@@ -37,6 +37,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/yunshi_jintian"
+                android:textColor="@color/black"
                 android:textSize="@dimen/yunshi_title_default" />
 
             <TextView
@@ -46,6 +47,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/yunshi_mingtian"
+                android:textColor="@color/black"
                 android:textSize="@dimen/yunshi_title_default" />
 
             <TextView
@@ -55,6 +57,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/yunshi_benzhou"
+                android:textColor="@color/black"
                 android:textSize="@dimen/yunshi_title_default" />
 
             <TextView
@@ -64,16 +67,9 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/yunshi_benyue"
+                android:textColor="@color/black"
                 android:textSize="@dimen/yunshi_title_default" />
 
-            <TextView
-                android:id="@+id/tv_yunshi_bennian"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/yunshi_bennian"
-                android:textSize="@dimen/yunshi_title_default" />
         </LinearLayout>
     </LinearLayout>
 

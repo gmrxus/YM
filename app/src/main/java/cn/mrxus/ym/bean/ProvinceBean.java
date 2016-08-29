@@ -1,11 +1,11 @@
 package cn.mrxus.ym.bean;
 
-import android.widget.ProgressBar;
 
 import com.bigkoo.pickerview.model.IPickerViewData;
 
 /**
  * Created by mrxus on 16/8/26.
+ * 滚动选项控件中的各级元素范围值
  */
 public class ProvinceBean implements IPickerViewData {
     private long id;
@@ -19,9 +19,10 @@ public class ProvinceBean implements IPickerViewData {
         this.description = description;
         this.others = others;
     }
-    public ProvinceBean(long id,String name){
-        this.id=id;
-        this.name=name;
+
+    public ProvinceBean(long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public long getId() {

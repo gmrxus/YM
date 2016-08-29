@@ -1,8 +1,5 @@
 package cn.mrxus.ym.MVP.presenter;
 
-import android.view.View;
-
-import cn.mrxus.ym.MVP.BasePresenter;
 import cn.mrxus.ym.MVP.BaseView;
 import cn.mrxus.ym.MVP.model.IInitSetAct;
 import cn.mrxus.ym.MVP.model.InitSetAct;
@@ -12,12 +9,12 @@ import cn.mrxus.ym.MVP.view.IInitSetView;
 /**
  * Created by mrxus on 16/8/26.
  */
-public class InitSetPresenter implements BasePresenter {
+public class InitSetPresenter {
     private IInitSetView view;
     private IInitSetAct act;
 
     public InitSetPresenter(IInitSetView view) {
-        attach(view);
+        this.view = view;
         act = new InitSetAct();
     }
 
@@ -49,13 +46,4 @@ public class InitSetPresenter implements BasePresenter {
         view.restoreSet(user.getLastTime(), user.getDuration(), user.getCycle());
     }
 
-    @Override
-    public void attach(BaseView view) {
-        this.view = (IInitSetView) view;
-    }
-
-    @Override
-    public void dettach() {
-        view = null;
-    }
 }
