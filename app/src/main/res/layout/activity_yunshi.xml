@@ -172,7 +172,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="综合指数:" />
+                            android:text="@string/zonghezhishu" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -183,39 +183,14 @@
                             android:paddingRight="5dp">
 
                             <ImageView
+                                android:id="@+id/iv_yunshi_zonghezhishu"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
+                                android:src="@drawable/pingfen_0xing" />
 
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
 
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
                         </LinearLayout>
 
 
@@ -230,7 +205,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="综合指数:" />
+                            android:text="@string/aiqingzhishu" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -241,39 +216,13 @@
                             android:paddingRight="5dp">
 
                             <ImageView
+                                android:id="@+id/iv_yunshi_aiqingzhishu"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
+                                android:src="@drawable/pingfen_1xing" />
 
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
                         </LinearLayout>
 
 
@@ -288,7 +237,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="综合指数:" />
+                            android:text="@string/caiyunzhishu" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -298,40 +247,16 @@
                             android:paddingLeft="5dp"
                             android:paddingRight="5dp">
 
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
 
                             <ImageView
+                                android:id="@+id/iv_yunshi_caiyunzhishu"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
+                                android:src="@drawable/pingfen_3xing" />
 
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
 
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
                         </LinearLayout>
 
 
@@ -346,7 +271,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="综合指数:" />
+                            android:text="@string/gongzuozhishu" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -357,55 +282,123 @@
                             android:paddingRight="5dp">
 
                             <ImageView
+                                android:id="@+id/iv_yunshi_gongzuozhishu"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:paddingLeft="2dp"
-                                android:src="@drawable/shixing" />
+                                android:src="@drawable/pingfen_5xing" />
                         </LinearLayout>
-
-
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"></LinearLayout>
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/yunshi_jiankangzhishu" />
+
+                        <TextView
+                            android:id="@+id/tv_yunshi_jiankangzhishu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/view_gap"
+                            android:text="80%" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/yunshi_xingyunshuzi" />
+
+                        <TextView
+                            android:id="@+id/tv_yunshi_xingyunshuzi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/view_gap"
+                            android:text="8" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/yunshi_xingyunyanse" />
+
+                        <TextView
+                            android:id="@+id/tv_yunshi_xingyunyanse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/view_gap"
+                            android:text="黄色" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/yunshi_guirenxingzuo" />
+
+                        <TextView
+                            android:id="@+id/tv_yunshi_guirenxingzuo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/view_gap"
+                            android:text="处男座" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4"></LinearLayout>
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_yunshi_content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_yunshi_context2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/view_gap" />
+            </LinearLayout>
         </LinearLayout>
 
 

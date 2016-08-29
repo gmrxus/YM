@@ -35,5 +35,13 @@
     <string name="yunshi_benzhou">本周</string>
     <string name="yunshi_benyue">本月</string>
     <string name="yunshi_bennian">本年</string>
+    <string name="yunshi_xingyunshuzi">幸运数字 :</string>
+    <string name="yunshi_jiankangzhishu">健康指数 :</string>
+    <string name="yunshi_xingyunyanse">幸运颜色 :</string>
+    <string name="yunshi_guirenxingzuo">贵人星座 :</string>
+    <string name="caiyunzhishu">财运指数 :</string>
+    <string name="aiqingzhishu">爱情指数 :</string>
+    <string name="zonghezhishu">综合指数 :</string>
+    <string name="gongzuozhishu">工作指数 :</string>
 
 </resources>

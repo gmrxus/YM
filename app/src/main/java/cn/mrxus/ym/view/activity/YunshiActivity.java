@@ -1,12 +1,12 @@
 package cn.mrxus.ym.view.activity;
 
 import android.content.Intent;
+import android.nfc.Tag;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -41,12 +41,33 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
     TextView tvYunshiTime;
     @BindView(R.id.tv_yunshi_wenben)
     TextView tvYunshiWenben;
+    @BindView(R.id.iv_yunshi_zonghezhishu)
+    ImageView ivYunshiZonghezhishu;
+    @BindView(R.id.iv_yunshi_aiqingzhishu)
+    ImageView ivYunshiAiqingzhishu;
+    @BindView(R.id.iv_yunshi_caiyunzhishu)
+    ImageView ivYunshiCaiyunzhishu;
+    @BindView(R.id.iv_yunshi_gongzuozhishu)
+    ImageView ivYunshiGongzuozhishu;
+    @BindView(R.id.tv_yunshi_jiankangzhishu)
+    TextView tvYunshiJiankangzhishu;
+    @BindView(R.id.tv_yunshi_xingyunshuzi)
+    TextView tvYunshiXingyunshuzi;
+    @BindView(R.id.tv_yunshi_xingyunyanse)
+    TextView tvYunshiXingyunyanse;
+    @BindView(R.id.tv_yunshi_guirenxingzuo)
+    TextView tvYunshiGuirenxingzuo;
+    @BindView(R.id.tv_yunshi_content1)
+    TextView tvYunshiContent1;
+    @BindView(R.id.tv_yunshi_context2)
+    TextView tvYunshiContext2;
 
     private String xingzuo;
     private YunshiPresenter presenter;
     private String netKey_xingzuo;
     private String netKey_type;
     private View lastView;
+    private Handler mHandler = new Handler();
 
     @Override
     protected void init() {
@@ -83,7 +104,6 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
                 return;
             case R.id.tv_yunshi_jintian:
                 netKey_type = "today";
-
                 break;
             case R.id.tv_yunshi_mingtian:
                 netKey_type = "tomorrow";
@@ -98,8 +118,8 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
                 break;
 
         }
-        setTitle(view, lastView);
-        presenter.NetWorkForYunshi(netKey_xingzuo, netKey_type);
+        setSelectTitleInfo(view, lastView);
+
 
     }
 
@@ -198,7 +218,7 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
 
     @Override
     public void showYunshiInfo(final YunshiBean info) {
-        runOnUiThread(new Runnable() {
+        mHandler.post(new Runnable() {
             @Override
             public void run() {
                 Toast.makeText(YunshiActivity.this, info.toString(), Toast.LENGTH_SHORT).show();
@@ -207,12 +227,26 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
     }
 
     @Override
-    public void showError(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+    public void showError(final String error) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(YunshiActivity.this, error, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-
-    private void setTitle(View v, View lastV) {
+    /**
+     * 选择title上的按钮后的动作
+     *
+     * @param v
+     * @param lastV
+     */
+    private void setSelectTitleInfo(View v, View lastV) {
+        if (v == lastView) {
+            return;
+        }
+        presenter.NetWorkForYunshi(netKey_xingzuo, netKey_type);
         if (v instanceof TextView) {
             ((TextView) v).setTextColor(getResources().getColor(R.color.mainColor));
         }
@@ -221,7 +255,9 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
                 ((TextView) lastView).setTextColor(getResources().getColor(R.color.black));
             }
         }
-        lastView = v;
+        if (v != lastView) {
+            lastView = v;
+        }
     }
 
     @Override

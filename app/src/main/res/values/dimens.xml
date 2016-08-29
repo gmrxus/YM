@@ -7,4 +7,5 @@
     <dimen name="main_tv_update_init_set_edittext">20sp</dimen>
     <dimen name="yunshi_title_default">18sp</dimen>
     <dimen name="yunshi_title_selected">24sp</dimen>
+    <dimen name="view_gap">10dp</dimen>
 </resources>
