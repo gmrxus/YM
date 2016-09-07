@@ -140,14 +140,30 @@
                 android:layout_height="0dp"
                 android:layout_weight="3">
 
-                <TextView
-                    android:id="@+id/tv_yunshi_wenben"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp"
+                    android:paddingTop="25px"
+                    android:paddingBottom="25px"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/yunshi_wenbenkuang" />
+                    android:background="@drawable/yunshi_wenbenkuang">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_yunshi_wenben"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="15dp"
+                            android:textColor="@color/mainColor" />
+                    </ScrollView>
+                </LinearLayout>
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -221,7 +237,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingLeft="2dp"
-                                android:src="@drawable/pingfen_1xing" />
+                                android:src="@drawable/pingfen_0xing" />
 
                         </LinearLayout>
 
@@ -254,7 +270,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingLeft="2dp"
-                                android:src="@drawable/pingfen_3xing" />
+                                android:src="@drawable/pingfen_0xing" />
 
 
                         </LinearLayout>
@@ -287,7 +303,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingLeft="2dp"
-                                android:src="@drawable/pingfen_5xing" />
+                                android:src="@drawable/pingfen_0xing" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -297,7 +313,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:orientation="vertical"
-                    android:paddingLeft="20dp">
+                    android:paddingLeft="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -315,7 +331,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingLeft="@dimen/view_gap"
+                            android:paddingLeft="@dimen/view_gap_s"
                             android:text="80%" />
                     </LinearLayout>
 
@@ -335,7 +351,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingLeft="@dimen/view_gap"
+                            android:paddingLeft="@dimen/view_gap_s"
                             android:text="8" />
                     </LinearLayout>
 
@@ -355,7 +371,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingLeft="@dimen/view_gap"
+                            android:paddingLeft="@dimen/view_gap_s"
                             android:text="黄色" />
                     </LinearLayout>
 
@@ -376,7 +392,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingLeft="@dimen/view_gap"
+                            android:paddingLeft="@dimen/view_gap_s"
                             android:text="处男座" />
                     </LinearLayout>
                 </LinearLayout>
@@ -388,16 +404,22 @@
                 android:layout_weight="4"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_yunshi_content1"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/tv_yunshi_context2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/view_gap" />
+                    <TextView
+                        android:id="@+id/tv_yunshi_content1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp" />
+
+                </ScrollView>
+                <!--<TextView-->
+                <!--android:id="@+id/tv_yunshi_context2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingTop="@dimen/view_gap" />-->
             </LinearLayout>
         </LinearLayout>
 

@@ -10,8 +10,11 @@ import com.orhanobut.logger.Logger;
 import cn.mrxus.ym.MVP.BaseView;
 import cn.mrxus.ym.MVP.view.IYunshiView;
 import cn.mrxus.ym.bean.YunshiBean;
+import cn.mrxus.ym.common.YmApplication;
+import cn.mrxus.ym.util.DateUtil;
 import cn.mrxus.ym.util.HttpUtil;
 import cn.mrxus.ym.util.LogUtil;
+import cn.mrxus.ym.util.SPUtil;
 
 /**
  * Created by mrxus on 16/8/29.
@@ -31,7 +34,7 @@ public class YunshiPresenter {
      * @param xingzuo
      * @param type
      */
-    public void NetWorkForYunshi(String xingzuo, String type) {
+    public void NetWorkForYunshi(String xingzuo, final String type) {
 
         HttpUtil.RequestBody requestBody = new HttpUtil.RequestBody.Builder()
                 .add("key", key)
@@ -48,6 +51,9 @@ public class YunshiPresenter {
                 if (0 != yunshiBean.getError_code()) {
                     LogUtil.e("错误原因:" + yunshiBean.getReason() + "\n" + "错误码:" + yunshiBean.getError_code());
                 } else {
+                    if("today".equals(type)){
+                        SPUtil.put(YmApplication.getContext(),SPUtil.SPkeys.YUNSHI_TOADY,returnValue);
+                    }
                     view.showYunshiInfo(yunshiBean);
                 }
             }

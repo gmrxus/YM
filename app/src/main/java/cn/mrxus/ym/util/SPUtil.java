@@ -15,6 +15,7 @@ public class SPUtil {
     public interface SPkeys{
 
         String VALUE_INIT_SET = "valueInitSet";
+        String YUNSHI_TOADY = "yunshi_toady";
     }
 
 

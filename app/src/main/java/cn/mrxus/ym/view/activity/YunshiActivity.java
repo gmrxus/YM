@@ -1,6 +1,7 @@
 package cn.mrxus.ym.view.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.nfc.Tag;
 import android.os.Handler;
 import android.view.View;
@@ -8,15 +9,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import java.text.DecimalFormat;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.mrxus.ym.MVP.BaseView;
 import cn.mrxus.ym.MVP.presenter.YunshiPresenter;
 import cn.mrxus.ym.MVP.view.IYunshiView;
 import cn.mrxus.ym.R;
+import cn.mrxus.ym.bean.Xingzuo;
 import cn.mrxus.ym.bean.YunshiBean;
 import cn.mrxus.ym.common.BaseActivity;
 import cn.mrxus.ym.common.YmApplication;
+import cn.mrxus.ym.util.LogUtil;
+import cn.mrxus.ym.util.SPUtil;
+import cn.mrxus.ym.util.StringUtil;
 
 /**
  * Created by mrxus on 16/8/27.
@@ -59,8 +68,8 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
     TextView tvYunshiGuirenxingzuo;
     @BindView(R.id.tv_yunshi_content1)
     TextView tvYunshiContent1;
-    @BindView(R.id.tv_yunshi_context2)
-    TextView tvYunshiContext2;
+//    @BindView(R.id.tv_yunshi_context2)
+//    TextView tvYunshiContext2;
 
     private String xingzuo;
     private YunshiPresenter presenter;
@@ -221,7 +230,61 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(YunshiActivity.this, info.toString(), Toast.LENGTH_SHORT).show();
+                //今天和明天的运势设置
+                if (0 == info.getWeekth() && 0 == info.getMonth()) {
+                    tvYunshiWenben.setText("\t\t" + info.getSummary());
+                    tvYunshiContent1.setText("\t\t" + Xingzuo.getXingzuoXingge(info.getName()));
+
+                    ivYunshiZonghezhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(info.getAll())));
+                    ivYunshiAiqingzhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(info.getLove())));
+                    ivYunshiCaiyunzhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(info.getMoney())));
+                    ivYunshiGongzuozhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(info.getWork())));
+
+                    tvYunshiJiankangzhishu.setText(info.getHealth());
+                    tvYunshiXingyunshuzi.setText(info.getNumber() + "");
+                    tvYunshiXingyunyanse.setText(info.getColor());
+                    tvYunshiGuirenxingzuo.setText(info.getQFriend());
+                }
+                //本周运势设置(图片和指数取自今天运势)
+                if (0 != info.getWeekth()) {
+                    tvYunshiWenben.setText(info.getHealth() + "\n" + info.getJob());
+                    tvYunshiContent1.setText(info.getLove() + "\n" + info.getMoney() + "\n" + info.getWork());
+
+                    YunshiBean todayInfo = new Gson().fromJson((String) SPUtil.get(YmApplication.getContext(), SPUtil.SPkeys.YUNSHI_TOADY, ""), YunshiBean.class);
+                    ivYunshiZonghezhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getAll())));
+                    ivYunshiAiqingzhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getLove())));
+                    ivYunshiCaiyunzhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getMoney())));
+                    ivYunshiGongzuozhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getWork())));
+
+                    tvYunshiJiankangzhishu.setText(todayInfo.getHealth());
+                    tvYunshiXingyunshuzi.setText(todayInfo.getNumber() + "");
+                    tvYunshiXingyunyanse.setText(todayInfo.getColor());
+                    tvYunshiGuirenxingzuo.setText(todayInfo.getQFriend());
+                }
+                //本月运势设置(图片和指数取自今天运势)
+                if (0 != info.getMonth()) {
+                    if(info.getAll().length()<info.getLove().length()){
+                        tvYunshiWenben.setText(info.getAll());
+                        tvYunshiContent1.setText(info.getLove());
+                    }else {
+                        tvYunshiContent1.setText(info.getAll());
+                        tvYunshiWenben.setText(info.getLove());
+                    }
+
+
+                    YunshiBean todayInfo = new Gson().fromJson((String) SPUtil.get(YmApplication.getContext(), SPUtil.SPkeys.YUNSHI_TOADY, ""), YunshiBean.class);
+                    ivYunshiZonghezhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getAll())));
+                    ivYunshiAiqingzhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getLove())));
+                    ivYunshiCaiyunzhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getMoney())));
+                    ivYunshiGongzuozhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(todayInfo.getWork())));
+
+                    tvYunshiJiankangzhishu.setText(todayInfo.getHealth());
+                    tvYunshiXingyunshuzi.setText(todayInfo.getNumber() + "");
+                    tvYunshiXingyunyanse.setText(todayInfo.getColor());
+                    tvYunshiGuirenxingzuo.setText(todayInfo.getQFriend());
+                }
+
+
             }
         });
     }
@@ -246,13 +309,11 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
         if (v == lastView) {
             return;
         }
+        ((TextView) v).setTextColor(getResources().getColor(R.color.mainColor));
         presenter.NetWorkForYunshi(netKey_xingzuo, netKey_type);
-        if (v instanceof TextView) {
-            ((TextView) v).setTextColor(getResources().getColor(R.color.mainColor));
-        }
         if (lastView != null) {
             if (lastV instanceof TextView) {
-                ((TextView) lastView).setTextColor(getResources().getColor(R.color.black));
+                ((TextView) lastV).setTextColor(getResources().getColor(R.color.black));
             }
         }
         if (v != lastView) {
@@ -275,4 +336,29 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
         super.onDestroy();
         unregisterPresenter();
     }
+
+    /**
+     * 根据指数返回图片
+     *
+     * @param zhishu
+     * @return
+     */
+    private Drawable genjuzhishufanhuitupian(int zhishu) {
+        if (zhishu >= 0 && zhishu <= 20) {
+            return getResources().getDrawable(R.drawable.pingfen_1xing);
+        } else if (zhishu > 20 && zhishu <= 40) {
+            return getResources().getDrawable(R.drawable.pingfen_2xing);
+        } else if (zhishu > 40 && zhishu <= 60) {
+            return getResources().getDrawable(R.drawable.pingfen_3xing);
+        } else if (zhishu > 60 && zhishu <= 80) {
+            return getResources().getDrawable(R.drawable.pingfen_4xing);
+        } else if (zhishu > 80 && zhishu <= 100) {
+            return getResources().getDrawable(R.drawable.pingfen_5xing);
+        } else {
+            return getResources().getDrawable(R.drawable.pingfen_3xing);
+        }
+
+    }
+
+
 }

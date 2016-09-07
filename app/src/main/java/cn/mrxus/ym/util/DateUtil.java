@@ -87,7 +87,6 @@ public class DateUtil {
      */
     public static String getTime(long time) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
-
         return format.format(new java.util.Date(time));
 
     }

@@ -1,6 +1,7 @@
 package cn.mrxus.ym.util;
 
 import android.content.Context;
+import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
 import android.widget.ImageView;
 
@@ -80,7 +81,7 @@ public class LoadImageUtil {
      * @param iv    ImageView
      * @param <T>   context
      */
-    public static <T extends Fragment> void loadImgRes(T t, int imgId, ImageView iv) {
+    public static <T extends Fragment> void loadImgRes(T t, @DrawableRes int imgId, ImageView iv) {
         Glide.with(t)
                 .load(imgId)
                 .crossFade(1000)
@@ -96,7 +97,7 @@ public class LoadImageUtil {
      * @param iv    ImageView
      * @param <T>   context
      */
-    public static <T extends Context> void loadImgGif(T t, int imgId, ImageView iv) {
+    public static <T extends Context> void loadImgGif(T t, @DrawableRes int imgId, ImageView iv) {
         Glide.with(t)
                 .load(imgId)
                 .asGif()
@@ -112,7 +113,7 @@ public class LoadImageUtil {
      * @param iv
      * @param <T>
      */
-    public static <T extends Fragment> void loadImgGif(T t, int imgId, ImageView iv) {
+    public static <T extends Fragment> void loadImgGif(T t, @DrawableRes int imgId, ImageView iv) {
         Glide.with(t)
                 .load(imgId)
                 .asGif()

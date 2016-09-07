@@ -28,4 +28,5 @@ public interface IXingzuoView extends BaseView {
      * @param drawableId
      */
     void setView(View view, @ColorRes int colorId, @DrawableRes int drawableId);
+
 }

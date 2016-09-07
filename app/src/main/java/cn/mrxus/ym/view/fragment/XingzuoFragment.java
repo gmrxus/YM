@@ -105,7 +105,6 @@ public class XingzuoFragment extends BaseFragment implements IXingzuoView {
     public void onDestroy() {
         super.onDestroy();
         unregisterPresenter();
-        LogUtil.e("onDestroy");
     }
 
 
@@ -113,7 +112,6 @@ public class XingzuoFragment extends BaseFragment implements IXingzuoView {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         registerPresenter(this);
-        LogUtil.e("onCreate");
     }
 
 
