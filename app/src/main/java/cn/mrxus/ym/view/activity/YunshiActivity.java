@@ -2,7 +2,6 @@ package cn.mrxus.ym.view.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.nfc.Tag;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,19 +10,16 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import java.text.DecimalFormat;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.mrxus.ym.MVP.BaseView;
 import cn.mrxus.ym.MVP.presenter.YunshiPresenter;
 import cn.mrxus.ym.MVP.view.IYunshiView;
 import cn.mrxus.ym.R;
-import cn.mrxus.ym.bean.Xingzuo;
+import cn.mrxus.ym.bean.XingzuoJiyu;
 import cn.mrxus.ym.bean.YunshiBean;
 import cn.mrxus.ym.common.BaseActivity;
 import cn.mrxus.ym.common.YmApplication;
-import cn.mrxus.ym.util.LogUtil;
 import cn.mrxus.ym.util.SPUtil;
 import cn.mrxus.ym.util.StringUtil;
 
@@ -233,7 +229,7 @@ public class YunshiActivity extends BaseActivity implements IYunshiView {
                 //今天和明天的运势设置
                 if (0 == info.getWeekth() && 0 == info.getMonth()) {
                     tvYunshiWenben.setText("\t\t" + info.getSummary());
-                    tvYunshiContent1.setText("\t\t" + Xingzuo.getXingzuoXingge(info.getName()));
+                    tvYunshiContent1.setText("\t\t" + XingzuoJiyu.getXingzuoXingge(info.getName()));
 
                     ivYunshiZonghezhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(info.getAll())));
                     ivYunshiAiqingzhishu.setImageDrawable(genjuzhishufanhuitupian(StringUtil.str2int(info.getLove())));

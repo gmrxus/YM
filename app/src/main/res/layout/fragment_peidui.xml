@@ -49,7 +49,10 @@
                         android:layout_width="100dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/select_nan" />
+                        android:textSize="18sp"
+                        android:text="@string/plese_select"
+                        android:background="@drawable/shap_peidui_select_nan"
+                        android:textColor="@color/blue" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -71,7 +74,10 @@
                         android:layout_width="100dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/select_nv" />
+                        android:textSize="18sp"
+                        android:text="@string/plese_select"
+                        android:background="@drawable/shap_peidui_select_nv"
+                        android:textColor="@color/mainColor" />
 
                     <ImageView
                         android:layout_width="wrap_content"

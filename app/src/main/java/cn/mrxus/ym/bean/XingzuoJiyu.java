@@ -3,7 +3,7 @@ package cn.mrxus.ym.bean;
 /**
  * Created by mrxus on 16/9/7.
  */
-public class Xingzuo {
+public class XingzuoJiyu {
 
     public static String getXingzuoXingge(String xingzuo) {
         switch (xingzuo) {
