@@ -9,4 +9,5 @@
     <dimen name="yunshi_title_selected">24sp</dimen>
     <dimen name="view_gap">10dp</dimen>
     <dimen name="view_gap_s">5dp</dimen>
+    <dimen name="peidui_title">30sp</dimen>
 </resources>
