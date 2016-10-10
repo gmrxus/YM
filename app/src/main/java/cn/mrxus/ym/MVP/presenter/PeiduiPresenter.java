@@ -1,8 +1,21 @@
 package cn.mrxus.ym.MVP.presenter;
 
 import android.text.TextUtils;
+import android.util.Log;
+import android.widget.Toast;
 
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cn.mrxus.ym.BuildConfig;
 import cn.mrxus.ym.MVP.view.IPeiduiView;
+import cn.mrxus.ym.common.YmApplication;
 import cn.mrxus.ym.util.HttpUtil;
 import cn.mrxus.ym.util.LogUtil;
 
@@ -20,7 +33,7 @@ public class PeiduiPresenter {
     }
 
     public void peidui(String nanXingzuo, String nvXingzuo) {
-        if (TextUtils.isEmpty(nanXingzuo)||TextUtils.isEmpty(nvXingzuo)) {
+        if (TextUtils.isEmpty(nanXingzuo) || TextUtils.isEmpty(nvXingzuo)) {
             peiduiView.showToast("请选择星座后再进行配对哦~");
             return;
         }
@@ -34,7 +47,12 @@ public class PeiduiPresenter {
         HttpUtil.post(peiduiUrl, body, new HttpUtil.OnNetRequestListener() {
             @Override
             public void onSuccess(String returnValue) {
-                LogUtil.e(returnValue);
+                JsonElement parse = new JsonParser().parse(returnValue);
+                if("\"Succes\"".equals(parse.getAsJsonObject().get("reason").toString())){
+                    peiduiView.showPeiduiResult(parse.getAsJsonObject().get("result").getAsJsonObject().get("content2").toString());
+                }else {
+                    LogUtil.e("没啥好配的,散了吧");
+                }
             }
 
             @Override

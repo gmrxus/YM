@@ -1,6 +1,8 @@
 package cn.mrxus.ym.view.fragment;
 
 import android.content.DialogInterface;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
@@ -18,15 +20,17 @@ import cn.mrxus.ym.common.BaseFragment;
  */
 public class PeiduiFragment extends BaseFragment implements View.OnClickListener, IPeiduiView {
 
-    private AlertDialog.Builder builder;
 
-    private String[] xingzuos = {"白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座", "天蝎座", "射手座", "摩羯座", "水瓶座", "双鱼座"};
-    private int postiton = -1;
+    private String[] xingzuos = {"白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座",
+            "天蝎座", "射手座", "摩羯座", "水瓶座", "双鱼座"};
+    private int postiton = 0;
     private Button btSelectNan;
     private Button btSelectNv;
     private String nanXingzuo;
     private String nvXingzuo;
     private PeiduiPresenter presenter;
+
+    private Handler mHandler=new Handler();
 
 
     @Override
@@ -66,19 +70,19 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
+    /**
+     * 创建选择星座弹窗
+     * @param sex
+     * @return
+     */
     private AlertDialog createSelectXingzuoDialog(final int sex) {
-        builder = new AlertDialog.Builder(this.getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
         builder.setTitle("请选择星座");
         builder.setSingleChoiceItems(xingzuos, 0, new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 postiton = i;
-            }
-        });
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
                 if (1 == sex) {
                     btSelectNan.setBackground(getResources().getDrawable(R.drawable.shap_peidui_select_nan));
                     btSelectNan.setText(xingzuos[postiton]);
@@ -89,9 +93,43 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
                     btSelectNv.setText(xingzuos[postiton]);
                     nvXingzuo=xingzuos[postiton];
                 }
+                dialogInterface.cancel();
             }
+
         });
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+//        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                if (1 == sex) {
+//                    btSelectNan.setBackground(getResources().getDrawable(R.drawable.shap_peidui_select_nan));
+//                    btSelectNan.setText(xingzuos[postiton]);
+//                    nanXingzuo=xingzuos[postiton];
+//                }
+//                if (0 == sex) {
+//                    btSelectNv.setBackground(getResources().getDrawable(R.drawable.shap_peidui_select_nv));
+//                    btSelectNv.setText(xingzuos[postiton]);
+//                    nvXingzuo=xingzuos[postiton];
+//                }
+//            }
+//        });
+//        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//
+//            }
+//        });
+        return builder.create();
+    }
+
+    /**
+     * 创建配对结果弹窗
+     * @return
+     */
+    private AlertDialog createPeiduiResultDialog(String result){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this.getActivity());
+        builder.setTitle("配对结果");
+        builder.setMessage(result);
+        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -113,6 +151,17 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void showToast(String msg) {
         Toast.makeText(this.getActivity(), msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showPeiduiResult(String result) {
+        final String resultReplace=result.replaceAll("\\\\r\\\\n","");
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                createPeiduiResultDialog(resultReplace).show();
+            }
+        });
     }
 
     @Override
