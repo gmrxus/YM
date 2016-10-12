@@ -31,6 +31,9 @@
         <activity
             android:name=".view.activity.YunshiActivity"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".view.activity.JiankangWenzhangActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

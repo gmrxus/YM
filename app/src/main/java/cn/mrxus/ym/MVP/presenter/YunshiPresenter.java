@@ -44,12 +44,13 @@ public class YunshiPresenter {
         HttpUtil.post(url, requestBody, new HttpUtil.OnNetRequestListener() {
             @Override
             public void onSuccess(String returnValue) {
+                LogUtil.e(returnValue);
                 if (TextUtils.isEmpty(returnValue)) {
                     return;
                 }
                 YunshiBean yunshiBean = new Gson().fromJson(returnValue, YunshiBean.class);
                 if (0 != yunshiBean.getError_code()) {
-                    LogUtil.e("错误原因:" + yunshiBean.getReason() + "\n" + "错误码:" + yunshiBean.getError_code());
+                    LogUtil.e("错误码:"+yunshiBean.getError_code());
                 } else {
                     if("today".equals(type)){
                         SPUtil.put(YmApplication.getContext(),SPUtil.SPkeys.YUNSHI_TOADY,returnValue);

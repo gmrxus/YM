@@ -10,6 +10,8 @@ import android.content.Context;
  */
 public class YmApplication extends Application {
     public static String xingzuoKey="xingzuo";
+    public static final String jiangkangKey ="jiankang";
+
     private static YmApplication ymApp;
     /**
      * 全局context

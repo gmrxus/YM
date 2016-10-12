@@ -1,37 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_jiankang_title"
+        android:gravity="center"
+        android:text="健康"
+        android:textSize="18sp" />
 
-        <android.support.constraint.ConstraintLayout
+    <LinearLayout style="@style/jiankang_button_group">
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="保健"
+            android:textSize="16sp" />
 
-            <TextView
-                android:text="TextView"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/alpha_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
+                android:orientation="vertical">
 
-                android:layout_width="wrap_content"
-                android:layout_height="53dp"
-                tools:layout_editor_absoluteY="20dp"
-                tools:layout_editor_absoluteX="35dp"
-                android:id="@+id/tv_jiankang_title"
-                tools:text="健康"
-                android:fontFamily="sans-serif"
-                android:background="@drawable/bg_jiankang_title"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textAllCaps="true" />
-        </android.support.constraint.ConstraintLayout>
-    </ScrollView>
+                <TextView
+                    android:id="@+id/tv_jiankang_baohuluanchao"
+                    style="@style/extract_jiankang_button"
+                    android:text="健康效果1" />
 
+                <TextView
+                    android:id="@+id/tv_jiankang_buqixue"
+                    style="@style/extract_jiankang_button"
+                    android:text="健康效果2" />
+
+                <TextView
+                    android:id="@+id/tv_jiankang_paidu"
+                    style="@style/extract_jiankang_button"
+                    android:text="健康效果3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_jiankang_buchongcijisu"
+                    style="@style/extract_jiankang_button"
+                    android:text="健康效果4" />
+
+                <TextView
+                    android:id="@+id/tv_jiankang_kangshuailaoxiaomiaozhao"
+                    style="@style/extract_jiankang_button"
+                    android:text="健康效果5" />
+
+                <TextView
+                    android:id="@+id/tv_jiankang_rufangyingyang"
+                    style="@style/extract_jiankang_button"
+                    android:text="健康效果6" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/jiankang_button_group">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="美容"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/alpha_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/jiankang_button_group">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="美容"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/alpha_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+                <TextView
+                    style="@style/extract_jiankang_button"
+                    android:text="美容效果1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

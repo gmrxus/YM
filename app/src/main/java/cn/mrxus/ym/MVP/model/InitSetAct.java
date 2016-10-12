@@ -12,8 +12,8 @@ import cn.mrxus.ym.util.SPUtil;
  */
 public class InitSetAct implements IInitSetAct {
     @Override
-    public void initSet(String lastTiem, String duration, String cycle) {
-        String json = new Gson().toJson(new User(lastTiem, duration, cycle));
+    public void initSet(String lastTime, String duration, String cycle) {
+        String json = new Gson().toJson(new User(lastTime, duration, cycle));
         SPUtil.put(YmApplication.getContext(), SPUtil.SPkeys.VALUE_INIT_SET, json);
     }
 
