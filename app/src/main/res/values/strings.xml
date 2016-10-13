@@ -45,5 +45,10 @@
     <string name="gongzuozhishu">工作指数 :</string>
     <string name="xingzuopeidui">星座配对</string>
     <string name="plese_select">请选择...</string>
+    <string name="anquanqi">安全期</string>
+    <string name="yuejingqi">月经期</string>
+    <string name="painuanqi">排卵期</string>
+    <string name="painuanri">排卵日</string>
+
 
 </resources>

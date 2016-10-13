@@ -26,8 +26,8 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
     private int postiton = 0;
     private Button btSelectNan;
     private Button btSelectNv;
-    private String nanXingzuo;
-    private String nvXingzuo;
+    private String nanXingzuo=null;
+    private String nvXingzuo=null;
     private PeiduiPresenter presenter;
 
     private Handler mHandler=new Handler();

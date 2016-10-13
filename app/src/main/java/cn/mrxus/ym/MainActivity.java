@@ -77,14 +77,11 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.ll_main_jiankang:
                 showFragment(3);
-                SPUtil.put(this,SPUtil.SPkeys.VALUE_INIT_SET,"");
                 break;
             case R.id.ll_main_wode:
                 showFragment(4);
                 Toast.makeText(this, "用户初始设置的数据:" + SPUtil.get(this, SPUtil.SPkeys.VALUE_INIT_SET, ""), Toast.LENGTH_SHORT).show();
-
                 break;
-
         }
     }
 
@@ -147,8 +144,8 @@ public class MainActivity extends BaseActivity {
                 break;
 
         }
-        setAnimation(viewList, lastShowFragmentNumber, 1.4f, 1f, 100);
-        setAnimation(viewList, thisShowFragmentNumber, 1f, 1.4f, 200);
+        setAnimation(viewList, lastShowFragmentNumber, 1.4f, 1f, 200);
+        setAnimation(viewList, thisShowFragmentNumber, 1f, 1.4f, 100);
 
     }
 
