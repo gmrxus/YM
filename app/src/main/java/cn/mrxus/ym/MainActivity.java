@@ -2,20 +2,20 @@ package cn.mrxus.ym;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.mrxus.ym.adapter.MyFragmentPagaeAdapter;
 import cn.mrxus.ym.common.BaseActivity;
-import cn.mrxus.ym.util.SPUtil;
 import cn.mrxus.ym.view.fragment.JiankangFragment;
 import cn.mrxus.ym.view.fragment.MainFragment;
 import cn.mrxus.ym.view.fragment.WodeFragment;
@@ -23,46 +23,75 @@ import cn.mrxus.ym.view.fragment.XingzuoFragment;
 
 public class MainActivity extends BaseActivity {
 
+
     @BindView(R.id.content)
-    FrameLayout content;
-    @BindView(R.id.ll_main_shouye)
-    LinearLayout llMainShouye;
-    @BindView(R.id.ll_main_xingzuo)
-    LinearLayout llMainXingzuo;
-    @BindView(R.id.ll_main_jiankang)
-    LinearLayout llMainJiankang;
-    @BindView(R.id.ll_main_wode)
-    LinearLayout llMainWode;
+    ViewPager content;
     @BindView(R.id.tv_shouye)
     TextView tvShouye;
+    @BindView(R.id.ll_main_shouye)
+    LinearLayout llMainShouye;
     @BindView(R.id.tv_xingzuo)
     TextView tvXingzuo;
+    @BindView(R.id.ll_main_xingzuo)
+    LinearLayout llMainXingzuo;
     @BindView(R.id.tv_jiankang)
     TextView tvJiankang;
+    @BindView(R.id.ll_main_jiankang)
+    LinearLayout llMainJiankang;
     @BindView(R.id.tv_wode)
     TextView tvWode;
-    private MainFragment mainFragment;
-    private XingzuoFragment xingzuoFragment;
-    private JiankangFragment jiankangFragment;
-    private WodeFragment wodeFragment;
-    private int thisShowFragmentNumber = 0;
-    private int lastShowFragmentNumber = 1;
-    private List<View> viewList = new ArrayList();
+    @BindView(R.id.ll_main_wode)
+    LinearLayout llMainWode;
+    private MyFragmentPagaeAdapter mFragmentViewPagerAdapter;
+    private FragmentManager fm;
+    private ArrayList<Fragment> fragments = new ArrayList<>();
+    private View originalView;
+
 
     @Override
-    protected void init() {
-        viewList.add(tvShouye);
-        viewList.add(tvXingzuo);
-        viewList.add(tvJiankang);
-        viewList.add(tvWode);
-        showFragment(1);
-        initSet();
+    public void init() {
+        if (fragments.size() == 0) {
+            addFragment();
+        }
+        fm = getSupportFragmentManager();
+        mFragmentViewPagerAdapter = new MyFragmentPagaeAdapter(fm, fragments);
+        initViewPager();
+        setAnimator(0);
+    }
 
+    public List addFragment() {
+        fragments.add(new MainFragment());
+        fragments.add(new XingzuoFragment());
+        fragments.add(new JiankangFragment());
+        fragments.add(new WodeFragment());
+        return fragments;
+    }
+
+    /**
+     * 初始化viewpager
+     */
+    private void initViewPager() {
+
+        content.setAdapter(mFragmentViewPagerAdapter);
+        content.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                setAnimator(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_main1;
     }
 
 
@@ -70,117 +99,67 @@ public class MainActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_main_shouye:
-                showFragment(1);
+                content.setCurrentItem(0);
                 break;
             case R.id.ll_main_xingzuo:
-                showFragment(2);
+                content.setCurrentItem(1);
                 break;
             case R.id.ll_main_jiankang:
-                showFragment(3);
+                content.setCurrentItem(2);
                 break;
             case R.id.ll_main_wode:
-                showFragment(4);
-                Toast.makeText(this, "用户初始设置的数据:" + SPUtil.get(this, SPUtil.SPkeys.VALUE_INIT_SET, ""), Toast.LENGTH_SHORT).show();
+                content.setCurrentItem(3);
                 break;
         }
     }
 
+    /**
+     * 导航栏的文字动画
+     *
+     * @param v1
+     * @param original
+     * @param target
+     */
+    private void clickAnimation(View v1, float original, float target) {
+        AnimatorSet as = new AnimatorSet();
+        ObjectAnimator v1X = ObjectAnimator.ofFloat(v1, "scaleX", original, target);
+        ObjectAnimator v1Y = ObjectAnimator.ofFloat(v1, "scaleY", original, target);
+        if (originalView != null) {
+            ObjectAnimator v2X = ObjectAnimator.ofFloat(originalView, "scaleX", target, original);
+            ObjectAnimator v2Y = ObjectAnimator.ofFloat(originalView, "scaleY", target, original);
+            as.play(v1X).with(v1Y).with(v2X).with(v2Y);
+        } else {
+            as.play(v1X).with(v1Y);
+        }
+        as.setDuration(200);
+        as.start();
+
+    }
 
     /**
-     * 显示哪个页面
+     * 根据不同的page显示不同的动画效果
      *
-     * @param fragmentNumber
+     * @param position
      */
-    private void showFragment(int fragmentNumber) {
-        if (thisShowFragmentNumber != 0) {
-            lastShowFragmentNumber = thisShowFragmentNumber;
-        }
-
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-
-        switch (fragmentNumber) {
+    private void setAnimator(int position) {
+        switch (position) {
+            case 0:
+                clickAnimation(tvShouye, 1f, 1.3f);
+                originalView = tvShouye;
+                break;
             case 1:
-                if (1 == thisShowFragmentNumber) {
-                    return;
-                }
-                if (mainFragment == null) {
-                    mainFragment = new MainFragment();
-                }
-                thisShowFragmentNumber = 1;
-                ft.replace(R.id.content, mainFragment).commit();
+                clickAnimation(tvXingzuo, 1f, 1.3f);
+                originalView = tvXingzuo;
                 break;
             case 2:
-                if (2 == thisShowFragmentNumber) {
-                    return;
-                }
-                if (xingzuoFragment == null) {
-                    xingzuoFragment = new XingzuoFragment();
-                }
-                thisShowFragmentNumber = 2;
-                ft.replace(R.id.content, xingzuoFragment).commit();
-
+                clickAnimation(tvJiankang, 1f, 1.3f);
+                originalView = tvJiankang;
                 break;
             case 3:
-                if (3 == thisShowFragmentNumber) {
-                    return;
-                }
-                if (jiankangFragment == null) {
-                    jiankangFragment = new JiankangFragment();
-                }
-                thisShowFragmentNumber = 3;
-                ft.replace(R.id.content, jiankangFragment).commit();
+                clickAnimation(tvWode, 1f, 1.3f);
+                originalView = tvWode;
                 break;
-            case 4:
-                if (4 == thisShowFragmentNumber) {
-                    return;
-                }
-                if (wodeFragment == null) {
-                    wodeFragment = new WodeFragment();
-                }
-                thisShowFragmentNumber = 4;
-                ft.replace(R.id.content, wodeFragment).commit();
-                break;
-            default:
-                break;
-
         }
-        setAnimation(viewList, lastShowFragmentNumber, 1.4f, 1f, 200);
-        setAnimation(viewList, thisShowFragmentNumber, 1f, 1.4f, 100);
-
-    }
-
-
-    /**
-     * 改变view大小的属性动画
-     *
-     * @param viewList 需要改变大小控件的集合
-     * @param location 第几个控件
-     * @param bSize    初始大小
-     * @param eSize    最终大小
-     * @param duration 动画持续时间
-     */
-    private void setAnimation(List<View> viewList, int location, float bSize, float eSize, long duration) {
-
-        View view = viewList.get(location - 1);
-        AnimatorSet as = new AnimatorSet();
-        if (view != null) {
-            ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", bSize, eSize);
-            ObjectAnimator scaleY = ObjectAnimator.ofFloat(view, "scaleY", bSize, eSize);
-            as.play(scaleX).with(scaleY);
-            as.setDuration(duration);
-            as.start();
-        }
-    }
-
-    /**
-     * 首次进入页面的初始设置
-     */
-    private void initSet() {
-        showSetWindow();
-    }
-
-    private void showSetWindow() {
-
     }
 
 

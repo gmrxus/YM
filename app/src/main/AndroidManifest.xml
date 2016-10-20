@@ -27,6 +27,7 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".view.activity.InitSetActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".view.activity.YunshiActivity"

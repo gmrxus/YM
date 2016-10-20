@@ -7,6 +7,7 @@ public class User {
     private String lastTime;
     private String duration;
     private String cycle;
+    private int status;
 
     public User() {
     }
@@ -41,5 +42,12 @@ public class User {
         this.lastTime = lastTime;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
 }
