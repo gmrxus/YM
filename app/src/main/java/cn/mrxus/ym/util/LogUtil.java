@@ -35,7 +35,6 @@ public class LogUtil {
      */
     public static void e(String msg) {
         if (isLog) {
-
             Logger.e(msg);
         }
     }
@@ -48,7 +47,6 @@ public class LogUtil {
      */
     public static void d_t(String msg, String tag) {
         if (isLog) {
-
             Logger.t(tag).d(msg);
         }
     }
@@ -61,7 +59,6 @@ public class LogUtil {
      */
     public static void e_t(String msg, String tag) {
         if (isLog) {
-
             Logger.t(tag).e(msg);
         }
     }

@@ -1,17 +1,12 @@
 package cn.mrxus.ym.MVP.presenter;
 
-import android.support.annotation.UiThread;
 import android.text.TextUtils;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.orhanobut.logger.Logger;
 
-import cn.mrxus.ym.MVP.BaseView;
 import cn.mrxus.ym.MVP.view.IYunshiView;
 import cn.mrxus.ym.bean.YunshiBean;
 import cn.mrxus.ym.common.YmApplication;
-import cn.mrxus.ym.util.DateUtil;
 import cn.mrxus.ym.util.HttpUtil;
 import cn.mrxus.ym.util.LogUtil;
 import cn.mrxus.ym.util.SPUtil;
@@ -50,10 +45,11 @@ public class YunshiPresenter {
                 }
                 YunshiBean yunshiBean = new Gson().fromJson(returnValue, YunshiBean.class);
                 if (0 != yunshiBean.getError_code()) {
-                    LogUtil.e("错误码:"+yunshiBean.getError_code());
+                    LogUtil.e("错误码:" + yunshiBean.getError_code());
+                    view.showError("数据访问出错");
                 } else {
-                    if("today".equals(type)){
-                        SPUtil.put(YmApplication.getContext(),SPUtil.SPkeys.YUNSHI_TOADY,returnValue);
+                    if ("today".equals(type)) {
+                        SPUtil.put(YmApplication.getContext(), SPUtil.SPkeys.YUNSHI_TOADY, returnValue);
                     }
                     view.showYunshiInfo(yunshiBean);
                 }

@@ -2,7 +2,6 @@ package cn.mrxus.ym.view.fragment;
 
 import android.content.DialogInterface;
 import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
@@ -26,11 +25,11 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
     private int postiton = 0;
     private Button btSelectNan;
     private Button btSelectNv;
-    private String nanXingzuo=null;
-    private String nvXingzuo=null;
+    private String nanXingzuo = null;
+    private String nvXingzuo = null;
     private PeiduiPresenter presenter;
 
-    private Handler mHandler=new Handler();
+    private Handler mHandler = new Handler();
 
 
     @Override
@@ -45,8 +44,6 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
         btSelectNv = (Button) rootView.findViewById(R.id.bt_peidui_select_nv);
         btSelectNv.setOnClickListener(this);
         rootView.findViewById(R.id.bt_peidui_ok).setOnClickListener(this);
-
-
     }
 
     @Override
@@ -65,13 +62,14 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
                 presenter.showNvDialog();
                 break;
             case R.id.bt_peidui_ok:
-                presenter.peidui(nanXingzuo,nvXingzuo);
+                presenter.peidui(nanXingzuo, nvXingzuo);
                 break;
         }
     }
 
     /**
      * 创建选择星座弹窗
+     *
      * @param sex
      * @return
      */
@@ -86,47 +84,27 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
                 if (1 == sex) {
                     btSelectNan.setBackground(getResources().getDrawable(R.drawable.shap_peidui_select_nan));
                     btSelectNan.setText(xingzuos[postiton]);
-                    nanXingzuo=xingzuos[postiton];
+                    nanXingzuo = xingzuos[postiton];
                 }
                 if (0 == sex) {
                     btSelectNv.setBackground(getResources().getDrawable(R.drawable.shap_peidui_select_nv));
                     btSelectNv.setText(xingzuos[postiton]);
-                    nvXingzuo=xingzuos[postiton];
+                    nvXingzuo = xingzuos[postiton];
                 }
                 dialogInterface.cancel();
             }
 
         });
-//        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                if (1 == sex) {
-//                    btSelectNan.setBackground(getResources().getDrawable(R.drawable.shap_peidui_select_nan));
-//                    btSelectNan.setText(xingzuos[postiton]);
-//                    nanXingzuo=xingzuos[postiton];
-//                }
-//                if (0 == sex) {
-//                    btSelectNv.setBackground(getResources().getDrawable(R.drawable.shap_peidui_select_nv));
-//                    btSelectNv.setText(xingzuos[postiton]);
-//                    nvXingzuo=xingzuos[postiton];
-//                }
-//            }
-//        });
-//        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//
-//            }
-//        });
         return builder.create();
     }
 
     /**
      * 创建配对结果弹窗
+     *
      * @return
      */
-    private AlertDialog createPeiduiResultDialog(String result){
-        AlertDialog.Builder builder=new AlertDialog.Builder(this.getActivity());
+    private AlertDialog createPeiduiResultDialog(String result) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
         builder.setTitle("配对结果");
         builder.setMessage(result);
         builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
@@ -155,7 +133,7 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void showPeiduiResult(String result) {
-        final String resultReplace=result.replaceAll("\\\\r\\\\n","");
+        final String resultReplace = result.replaceAll("\\\\r\\\\n", "");
         mHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -171,7 +149,7 @@ public class PeiduiFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void unregisterPresenter() {
-        presenter=null;
+        presenter = null;
     }
 
     @Override

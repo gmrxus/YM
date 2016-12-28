@@ -57,7 +57,6 @@ public class MainActivity1 extends BaseActivity {
         viewList.add(tvWode);
         showFragment(1);
         initSet();
-
     }
 
     @Override
@@ -160,7 +159,6 @@ public class MainActivity1 extends BaseActivity {
      * @param duration 动画持续时间
      */
     private void setAnimation(List<View> viewList, int location, float bSize, float eSize, long duration) {
-
         View view = viewList.get(location - 1);
         AnimatorSet as = new AnimatorSet();
         if (view != null) {
